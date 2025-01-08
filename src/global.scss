@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  height: 100%;
+  scrollbar-width: none;
+}
+
+@mixin black-tint-1 {
+  background-color: #1a1a1a;
+}
+@mixin black-tint-2 {
+  background-color: #313131;
+}
+
+@mixin blue-tint {
+  background-color: #023d88;
+}
+
+@mixin header-height {
+  height: min(12vh, 10rem);
+}
+
+@mixin flex-coloum-center-v-h {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-row-center-v-h {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin sidebar-btns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  height: 6rem;
+  border-radius: 10px;
+  max-width: 200px;
+  margin-top: 1.5rem;
+  @include for-mobile-screens {
+    border-radius: 1.5vw;
+  }
+}
+@mixin sidebar-icon {
+  width: 15%;
+  margin-left: 2rem;
+  min-width: 20px;
+  @include for-tablet-screens {
+    margin-left: 1rem;
+  }
+  @include for-mobile-screens {
+    margin-left: 0;
+    width: 40%;
+  }
+}
+@mixin sidebar-text {
+  margin-left: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+@mixin for-wide-screens {
+  @media (min-width: 1700px) {
+    @content;
+  }
+}
+@mixin for-tablet-screens {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin for-mobile-screens {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
